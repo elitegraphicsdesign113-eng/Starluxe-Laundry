@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    background-color: #ffffff; /* Clean white background */
-    color: #0f172a; /* Dark text for crystal clear contrast on white */
+    background-color: #ffffff;
+    color: #0f172a;
     line-height: 1.6;
 }
 
@@ -61,22 +61,23 @@ body {
     gap: 12px;
 }
 
-/* Enhanced Logo Styling to ensure it is visible and prominent */
+/* Fixed logo styling for high visibility */
 .logo-image {
-    width: 52px;
-    height: 52px;
-    border-radius: 12px;
-    object-fit: contain;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
     background-color: #ffffff;
     border: 2px solid var(--brand-magenta);
-    padding: 3px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
+/* Luxurious serif font applied to brand name */
 .brand-name {
-    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
     font-weight: 800;
-    color: #0f172a;
+    color: var(--brand-magenta);
     line-height: 1;
     letter-spacing: 0.5px;
 }
