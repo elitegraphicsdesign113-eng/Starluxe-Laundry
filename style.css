@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    background-color: #0b0f19;
-    color: #f1f5f9;
+    background-color: #ffffff; /* Clean white background */
+    color: #0f172a; /* Dark text for crystal clear contrast on white */
     line-height: 1.6;
 }
 
@@ -40,9 +40,9 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(11, 15, 25, 0.94);
+    background-color: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
-    border-bottom: 2px solid #1e293b;
+    border-bottom: 2px solid #e2e8f0;
 }
 
 .nav-wrap {
@@ -61,25 +61,29 @@ body {
     gap: 12px;
 }
 
+/* Enhanced Logo Styling to ensure it is visible and prominent */
 .logo-image {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    object-fit: cover;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    object-fit: contain;
+    background-color: #ffffff;
     border: 2px solid var(--brand-magenta);
+    padding: 3px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .brand-name {
     font-size: 20px;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     line-height: 1;
     letter-spacing: 0.5px;
 }
 
 .brand-sub {
     font-size: 10px;
-    color: #38bdf8;
+    color: var(--brand-teal);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -91,7 +95,7 @@ body {
 }
 
 .nav-links-box a {
-    color: #94a3b8;
+    color: #475569;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -99,7 +103,7 @@ body {
 }
 
 .nav-links-box a:hover {
-    color: var(--brand-lime);
+    color: var(--brand-magenta);
 }
 
 .whatsapp-pill-btn {
@@ -113,12 +117,12 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.25);
 }
 
 .brand-hero {
     padding: 90px 20px;
-    background: radial-gradient(circle at 10% 20%, #1e1b4b 0%, #0b0f19 70%);
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .hero-wrap {
@@ -134,13 +138,13 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(101, 163, 13, 0.15);
+    background-color: rgba(101, 163, 13, 0.1);
     border: 1px solid var(--brand-lime);
     padding: 8px 16px;
     border-radius: 50px;
     font-size: 13px;
     font-weight: 700;
-    color: #84cc16;
+    color: #4d7c0f;
     margin-bottom: 25px;
 }
 
@@ -154,20 +158,20 @@ body {
 .hero-left-content h2 {
     font-size: 46px;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     line-height: 1.15;
     margin-bottom: 20px;
 }
 
 .hero-left-content h2 span {
-    background: linear-gradient(90deg, #f43f5e, #38bdf8, #84cc16);
+    background: linear-gradient(90deg, var(--brand-magenta), var(--brand-teal), var(--brand-lime));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-left-content p {
     font-size: 16px;
-    color: #94a3b8;
+    color: #475569;
     margin-bottom: 35px;
 }
 
@@ -187,7 +191,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 8px 20px rgba(190, 24, 93, 0.3);
+    box-shadow: 0 8px 20px rgba(190, 24, 93, 0.25);
     transition: transform 0.2s;
 }
 
@@ -205,7 +209,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
     transition: transform 0.2s;
 }
 
@@ -215,39 +219,63 @@ body {
 
 .hero-right-card {
     position: relative;
-    background-color: #111827;
-    padding: 15px;
-    border-radius: 24px;
-    border: 2px solid var(--brand-teal);
 }
 
-.hero-right-card img {
+/* CSS Slideshow Styling */
+.hero-slideshow {
+    position: relative;
     width: 100%;
     height: 400px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border: 2px solid #e2e8f0;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 16px;
+    opacity: 0;
+    animation: fadeSlideshow 12s infinite;
+}
+
+.hero-slide.slide-1 { animation-delay: 0s; }
+.hero-slide.slide-2 { animation-delay: 4s; }
+.hero-slide.slide-3 { animation-delay: 8s; }
+
+@keyframes fadeSlideshow {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 .floating-address-box {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    background-color: rgba(17, 24, 39, 0.95);
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     padding: 15px 20px;
     border-radius: 14px;
-    border: 1px solid var(--brand-lime);
+    border: 1px solid var(--brand-teal);
     display: flex;
     align-items: center;
     gap: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .icon-circle {
     width: 40px;
     height: 40px;
-    background-color: var(--brand-lime);
-    color: #0b0f19;
+    background-color: var(--brand-teal);
+    color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -258,18 +286,18 @@ body {
 .floating-address-box h4 {
     font-size: 14px;
     font-weight: 700;
-    color: #ffffff;
+    color: #0f172a;
 }
 
 .floating-address-box p {
     font-size: 12px;
-    color: #94a3b8;
+    color: #475569;
     margin: 0;
 }
 
 .services-section {
     padding: 100px 20px;
-    background-color: #070a12;
+    background-color: #f8fafc;
 }
 
 .section-wrap {
@@ -286,7 +314,7 @@ body {
 .sub-tag {
     font-size: 12px;
     font-weight: 700;
-    color: #84cc16;
+    color: var(--brand-teal);
     text-transform: uppercase;
     letter-spacing: 2px;
     display: block;
@@ -296,12 +324,12 @@ body {
 .sec-title h2 {
     font-size: 36px;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     margin-bottom: 15px;
 }
 
 .sec-title p {
-    color: #94a3b8;
+    color: #475569;
     font-size: 15px;
 }
 
@@ -312,9 +340,10 @@ body {
 }
 
 .service-card {
-    background-color: #111827;
+    background-color: #ffffff;
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     transition: transform 0.3s;
 }
 
@@ -351,7 +380,7 @@ body {
 
 .bg-teal { background-color: var(--brand-teal); }
 .bg-magenta { background-color: var(--brand-magenta); }
-.bg-lime { background-color: var(--brand-lime); color: #0b0f19; }
+.bg-lime { background-color: var(--brand-lime); color: #0f172a; }
 
 .card-body {
     padding: 25px;
@@ -360,13 +389,13 @@ body {
 .card-body h3 {
     font-size: 20px;
     font-weight: 700;
-    color: #ffffff;
+    color: #0f172a;
     margin-bottom: 10px;
 }
 
 .card-body p {
     font-size: 14px;
-    color: #94a3b8;
+    color: #475569;
     margin-bottom: 20px;
 }
 
@@ -374,13 +403,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #1f2937;
+    border-top: 1px solid #f1f5f9;
     padding-top: 15px;
 }
 
 .highlight-text {
     font-size: 12px;
-    color: #38bdf8;
+    color: var(--brand-teal);
     font-weight: 600;
 }
 
@@ -394,12 +423,32 @@ body {
 }
 
 .action-btn-teal { color: var(--brand-teal); }
-.action-btn-magenta { color: #f43f5e; }
+.action-btn-magenta { color: var(--brand-magenta); }
 .action-btn-lime { color: var(--brand-lime); }
+
+.gallery-info-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+}
+
+.mini-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.mini-gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+}
 
 .journey-section {
     padding: 100px 20px;
-    background-color: #0b0f19;
+    background-color: #f8fafc;
 }
 
 .journey-wrap {
@@ -414,13 +463,13 @@ body {
 .journey-text h2 {
     font-size: 36px;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     margin-bottom: 20px;
 }
 
 .journey-text p {
     font-size: 15px;
-    color: #94a3b8;
+    color: #475569;
 }
 
 .stats-grid {
@@ -431,37 +480,38 @@ body {
 }
 
 .stat-box {
-    background-color: #111827;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 16px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
 }
 
 .stat-box h3 {
     font-size: 24px;
     font-weight: 800;
-    color: #ffffff;
+    color: #0f172a;
     margin-bottom: 5px;
 }
 
 .stat-box p {
     font-size: 11px;
-    color: #94a3b8;
+    color: #475569;
 }
 
 .location-card-brand {
-    background-color: #111827;
+    background-color: #ffffff;
     border: 2px solid var(--brand-lime);
     border-radius: 24px;
     padding: 35px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
 .loc-header {
     display: flex;
     align-items: center;
     gap: 15px;
-    border-bottom: 1px solid #1f2937;
+    border-bottom: 1px solid #f1f5f9;
     padding-bottom: 20px;
     margin-bottom: 25px;
 }
@@ -470,7 +520,7 @@ body {
     width: 48px;
     height: 48px;
     background-color: var(--brand-lime);
-    color: #0b0f19;
+    color: #0f172a;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -481,12 +531,12 @@ body {
 .loc-header h3 {
     font-size: 18px;
     font-weight: 700;
-    color: #ffffff;
+    color: #0f172a;
 }
 
 .loc-header p {
     font-size: 12px;
-    color: #84cc16;
+    color: #4d7c0f;
 }
 
 .loc-list {
@@ -501,7 +551,7 @@ body {
     align-items: flex-start;
     gap: 12px;
     font-size: 14px;
-    color: #cbd5e1;
+    color: #334155;
 }
 
 .l-row i {
@@ -510,7 +560,7 @@ body {
 }
 
 .l-row a {
-    color: #38bdf8;
+    color: var(--brand-teal);
     text-decoration: none;
 }
 
@@ -529,8 +579,8 @@ body {
 }
 
 .brand-footer {
-    background-color: #04060b;
-    border-top: 2px solid #1e293b;
+    background-color: #0f172a;
+    color: #ffffff;
     padding: 40px 20px;
 }
 
@@ -555,7 +605,7 @@ body {
 
 .footer-wrap p {
     font-size: 13px;
-    color: #64748b;
+    color: #94a3b8;
 }
 
 .f-socials {
